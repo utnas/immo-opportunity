@@ -7,7 +7,9 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('buildings', function() {
+    this.route('buildings', {path: 'index'});
     this.route('new');
+    this.route('building');
   });
 });
 
