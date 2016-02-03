@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Creation form -->
+        <div class="col-md-4">
+          <h2>Create building</h2>
+          <hr/>
+          <div class="form-group">
+            <label for="name">Flat name:</label>
+            {{input type="text" class="form-control" value=name disabled=entryNotAllowed placeholder="Flat name"}}
+          </div>
+          <div class="form-group">
+            <label for="type">Plex type:</label>
+            {{input type="number" class="form-control" value=type disabled=entryNotAllowed placeholder="Plex type"}}
+          </div>
+          <div class="form-group">
+            <label for="sellingPrice">Selling price:</label>
+           {{input type="number" class="form-control" value=sellingPrice disabled=entryNotAllowed placeholder="Selling price"}}
+         </div>
+          <div class="form-group">
+            <label for="sellingPrice">Number of flats:</label>
+            {{input type="number" class="form-control" value=numberOfFlats disabled=entryNotAllowed placeholder="Number of flats"}}
+          </div>
+          <div class="form-group">
+            <label for="sellingPrice">Property tax:</label>
+            {{input type="number" class="form-control" value=propertyTax disabled=entryNotAllowed placeholder="Property tax"}}
+          </div>
+          <div class="form-group">
+            <label for="sellingPrice">School tax:</label>
+            {{input type="number" class="form-control" value=schoolTax disabled=entryNotAllowed placeholder="School Tax"}}
+          </div>
+          <div class="form-group">
+            <label for="sellingPrice">Annual gross rent:</label>
+            {{input type="number" class="form-control" value=annualGrossRent disabled=entryNotAllowed placeholder="Annual gross rent"}}
+          </div>
+          <button class="btn btn-primary btn-block" {{action "select" post}}>Create</button>
+        </div>
+      <!-- End reation form -->
+      <!-- Opportunity checking  -->
+        <div class="col-md-8">
+          <h2 class="text-center">Check opportunity details</h2>
+          <hr/>
+          <h2>Multiplier of gross revenu: {{sellingPrice}}</h2>
+        </div>
+      <!-- End opportunity checking  -->
+    </div>
+  </div>
+</div>
