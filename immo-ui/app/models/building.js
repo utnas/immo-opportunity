@@ -12,8 +12,11 @@ export default DS.Model.extend({
   description:      DS.attr('string'),
   rev:              DS.attr('string'),
 
-  multiplierOfGrossRevenu: Ember.computed('sellingPrice','annualGrossRent', function() {
-    //return "${this.get('sellingPrice')} ${this.get('annualGrossRent')}";
-    return "Que des conneries";
+  multiplierOfGrossRevenu: Ember.computed(function() {
+    return this.get('sellingPrice') / this.get('annualGrossRent');
+  }),
+
+  pricePerFlat: Ember.computed(function() {
+    return this.get('sellingPrice') / this.get('numberOfFlats');
   }),
 });
