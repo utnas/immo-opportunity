@@ -9,6 +9,7 @@ export default DS.Model.extend({
   propertyTax: DS.attr('number'),
   schoolTax: DS.attr('number'),
   annualGrossRent: DS.attr('number'),
+  description: DS.attr('text'),
 
   multiplierOfGrossRevenu: Ember.computed('sellingPrice','annualGrossRent', function() {
     //return "${this.get('sellingPrice')} ${this.get('annualGrossRent')}";

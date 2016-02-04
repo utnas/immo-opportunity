@@ -26,6 +26,9 @@
           <div class="form-group">
             {{input type="number" class="form-control" value=annualGrossRent disabled=entryNotAllowed placeholder="Annual gross rent"}}
           </div>
+          <div class="form-group">
+            {{textarea class="form-control" value=description placeholder="Description" rows="4"}}
+          </div>
           <button class="btn btn-primary btn-block" {{action "create" post}}>Create building</button>
         </div>
       <!-- End reation form -->
@@ -96,3 +99,4 @@
     </div>
   </div>
 </div>
+<hr/>
