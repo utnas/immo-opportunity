@@ -1,3 +1,66 @@
 <h1>Buildings</h1>
 <hr/>
-{{outlet}}
+{{#each-in model as |param|}}
+  <div class="alert alert-info">
+    Name: {{model.name}}, Number Of Flats: {{model.numberOfFlats}}
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h4>
+        <span class="label label-primary">Check opportunity when owner occupying</span>
+      </h4>
+      <br/>
+
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Multiplier of gross revenu</th>
+            <th>Price per appartment</th>
+            <th>Net value of rental</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="label label-danger">1223.34</span></td>
+            <td><span class="label label-warning">1223.34</span></td>
+            <td><span class="label label-danger">1223.34</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-success">1223.34</span></td>
+            <td><span class="label label-warning">1223.34</span></td>
+            <td><span class="label label-success">1223.34</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h4>
+        <span class="label label-primary">Check opportunity when owner not occupying</span>
+      </h4>
+      <br/>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Multiplier of gross revenu</th>
+            <th>Price per appartment</th>
+            <th>Net value of rental</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr >
+            <td><span class="label label-success">1223.34</span></td>
+            <td><span class="label label-success">1223.34</span></td>
+            <td><span class="label label-success">1223.34</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-success">1223.34</span></td>
+            <td><span class="label label-success">1223.34</span></td>
+            <td><span class="label label-success">1223.34</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+{{/each-in}}
