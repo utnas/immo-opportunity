@@ -3,8 +3,8 @@
     <div class="row">
       <!-- Creation form -->
         <div class="col-md-4">
-          <h2>Create building</h2>
-          <hr/>
+          <h3>Create building</h3>
+
           <div class="form-group">
             <label for="name">Flat name:</label>
             {{input type="text" class="form-control" value=name disabled=entryNotAllowed placeholder="Flat name"}}
@@ -33,25 +33,66 @@
             <label for="sellingPrice">Annual gross rent:</label>
             {{input type="number" class="form-control" value=annualGrossRent disabled=entryNotAllowed placeholder="Annual gross rent"}}
           </div>
-          <button class="btn btn-primary btn-block" {{action "create" post}}>Create</button>
+          <button class="btn btn-primary btn-block" {{action "create" post}}>Create building</button>
+          <br/>
         </div>
       <!-- End reation form -->
       <!-- Opportunity checking  -->
         <div class="col-md-8">
-          <h2 class="text-center">Check opportunity details</h2>
-          <hr/>
           <div class="row">
-            <div class="col-md-4">
-              <h3>Owner occupying</h3>
-              Multiplier of gross revenu:<br/>
-              Price per appartment:<br/>
-              Net value of rental:
+            <div class="col-md-12">
+              <div class="alert alert-info text-center">
+                <h4>Check opportinity when owner occupying</h4>
+              </div>
+              <table class="table table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th>Multiplier of gross revenu</th>
+                    <th>Price per appartment</th>
+                    <th>Net value of rental</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="label label-danger">1223.34</span></td>
+                    <td><span class="label label-warning">1223.34</span></td>
+                    <td><span class="label label-danger">1223.34</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="label label-success">1223.34</span></td>
+                    <td><span class="label label-warning">1223.34</span></td>
+                    <td><span class="label label-success">1223.34</span></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <div class="col-md-4">
-              <h3>Owner not occupying</h3>
-              Multiplier of gross revenu:<br/>
-              Price per appartment:<br/>
-              Net value of rental:
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="alert alert-info text-center">
+                <h4>Check opportinity when owner not occupying</h4>
+              </div>
+              <table class="table table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th>Multiplier of gross revenu</th>
+                    <th>Price per appartment</th>
+                    <th>Net value of rental</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="label label-success">1223.34</span></td>
+                    <td><span class="label label-success">1223.34</span></td>
+                    <td><span class="label label-success">1223.34</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="label label-success">1223.34</span></td>
+                    <td><span class="label label-success">1223.34</span></td>
+                    <td><span class="label label-success">1223.34</span></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
