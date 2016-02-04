@@ -6,42 +6,40 @@
           <h3>Building information</h3>
           <br/>
           <div class="form-group">
-            {{input type="text" class="form-control" value=name disabled=entryNotAllowed placeholder="Flat name"}}
+            {{input type="text" class="form-control" value=model.name disabled=entryNotAllowed placeholder="Flat name"}}
           </div>
           <div class="form-group">
-            {{input type="number" class="form-control" value=type disabled=entryNotAllowed placeholder="Plex type"}}
+            {{input type="number" class="form-control" value=model.type disabled=entryNotAllowed placeholder="Plex type"}}
           </div>
           <div class="form-group">
-           {{input type="number" class="form-control" value=sellingPrice disabled=entryNotAllowed placeholder="Selling price"}}
-         </div>
-          <div class="form-group">
-            {{input type="number" class="form-control" value=numberOfFlats disabled=entryNotAllowed placeholder="Number of flats"}}
+           {{input type="number" class="form-control" value=model.sellingPrice disabled=entryNotAllowed placeholder="Selling price"}}
           </div>
           <div class="form-group">
-            {{input type="number" class="form-control" value=propertyTax disabled=entryNotAllowed placeholder="Property tax"}}
+            {{input type="number" class="form-control" value=model.numberOfFlats disabled=entryNotAllowed placeholder="Number of flats"}}
           </div>
           <div class="form-group">
-            {{input type="number" class="form-control" value=schoolTax disabled=entryNotAllowed placeholder="School Tax"}}
+            {{input type="number" class="form-control" value=model.propertyTax disabled=entryNotAllowed placeholder="Property tax"}}
           </div>
           <div class="form-group">
-            {{input type="number" class="form-control" value=annualGrossRent disabled=entryNotAllowed placeholder="Annual gross rent"}}
+            {{input type="number" class="form-control" value=model.schoolTax disabled=entryNotAllowed placeholder="School Tax"}}
           </div>
           <div class="form-group">
-            {{textarea class="form-control" value=description placeholder="Description" rows="4"}}
+            {{input type="number" class="form-control" value=model.annualGrossRent disabled=entryNotAllowed placeholder="Annual gross rent"}}
           </div>
-          <button class="btn btn-primary btn-block" {{action "create" post}}>Create building</button>
+          <div class="form-group">
+            {{textarea class="form-control" value=model.description placeholder="Description" rows="4"}}
+          </div>
+          <button class="btn btn-primary btn-block" {{action 'create' model}}>Create building</button>
         </div>
       <!-- End reation form -->
       <!-- Opportunity checking  -->
         <div class="col-md-8">
           <div class="row">
             <div class="col-md-12">
-
                 <h4 class="text-center">
                   <span class="label label-primary">Check opportunity when owner occupying</span>
                 </h4>
                 <br/>
-
               <table class="table table-striped table-hover">
                 <thead>
                   <tr>

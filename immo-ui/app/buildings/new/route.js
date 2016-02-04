@@ -2,29 +2,18 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 
-  model: function(){
-    return {};
+  model(){
+    return this.store.createRecord('building');
   },
 
   actions: {
-
-    create: function(model){
-
-      let building = this.store.createRecord('building', {
-        name: model.name,
-        type: model.type,
-        sellingPrice: model.sellingPrice,
-        numberOfFlats: model.numberOfFlats,
-        propertyTax: model.propertyTax,
-        schoolTax: model.schoolTax,
-        annualGrossRent: model.annualGrossRent,
-      });
-
-      building.save().then(() => {
-        this.transitionTo('buildings');
-        }, function() {
+    create: function (model) {
+      model.save().then(() => {
+          this.transitionTo('buildings');
+        }, () => {
           console.log('Building save failed');
       });
-    }
+    },
+    // other actions
   }
 });
