@@ -4,37 +4,28 @@
       <!-- Creation form -->
         <div class="col-md-4">
           <h3>Create building</h3>
-
           <div class="form-group">
-            <label for="name">Flat name:</label>
             {{input type="text" class="form-control" value=name disabled=entryNotAllowed placeholder="Flat name"}}
           </div>
           <div class="form-group">
-            <label for="type">Plex type:</label>
             {{input type="number" class="form-control" value=type disabled=entryNotAllowed placeholder="Plex type"}}
           </div>
           <div class="form-group">
-            <label for="sellingPrice">Selling price:</label>
            {{input type="number" class="form-control" value=sellingPrice disabled=entryNotAllowed placeholder="Selling price"}}
          </div>
           <div class="form-group">
-            <label for="sellingPrice">Number of flats:</label>
             {{input type="number" class="form-control" value=numberOfFlats disabled=entryNotAllowed placeholder="Number of flats"}}
           </div>
           <div class="form-group">
-            <label for="sellingPrice">Property tax:</label>
             {{input type="number" class="form-control" value=propertyTax disabled=entryNotAllowed placeholder="Property tax"}}
           </div>
           <div class="form-group">
-            <label for="sellingPrice">School tax:</label>
             {{input type="number" class="form-control" value=schoolTax disabled=entryNotAllowed placeholder="School Tax"}}
           </div>
           <div class="form-group">
-            <label for="sellingPrice">Annual gross rent:</label>
             {{input type="number" class="form-control" value=annualGrossRent disabled=entryNotAllowed placeholder="Annual gross rent"}}
           </div>
           <button class="btn btn-primary btn-block" {{action "create" post}}>Create building</button>
-          <br/>
         </div>
       <!-- End reation form -->
       <!-- Opportunity checking  -->
@@ -43,7 +34,7 @@
             <div class="col-md-12">
 
                 <h4 class="text-center">
-                  <span class="label label-primary">Check opportinity when owner occupying</span>
+                  <span class="label label-primary">Check opportunity when owner occupying</span>
                 </h4>
                 <br/>
 
@@ -73,7 +64,7 @@
           <div class="row">
             <div class="col-md-12">
               <h4 class="text-center">
-                <span class="label label-primary">Check opportinity when owner not occupying</span>
+                <span class="label label-primary">Check opportunity when owner not occupying</span>
               </h4>
               <br/>
               <table class="table table-striped table-hover">
