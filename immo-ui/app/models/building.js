@@ -19,4 +19,20 @@ export default DS.Model.extend({
   pricePerFlat: Ember.computed(function() {
     return this.get('sellingPrice') / this.get('numberOfFlats');
   }),
+
+  netValuesOfRents: Ember.computed(function() {
+    return (this.get('annualGrossRent') + this.assessmentFactor()) - (this.provisionForBadDebt() + this.vacancyRate());
+  }),
+
+  assessmentFactor: function(){
+    return this.get('annualGrossRent') * 0.02;
+  },
+
+  provisionForBadDebt: function(){
+    return this.get('annualGrossRent') * 0.01;
+  },
+
+  vacancyRate: function(){
+    return this.get('annualGrossRent') * 0.03;
+  }
 });
