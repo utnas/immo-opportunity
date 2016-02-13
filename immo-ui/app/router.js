@@ -9,7 +9,7 @@ Router.map(function() {
   this.route('buildings', function() {
     this.route('buildings', {path: 'index'});
     this.route('new');
-    this.route('building', {path: ':building_id'}, function(){
+    this.route('show', {path: ':building_id'}, function(){
       // Incase of nested routes
     });
     //Other routes here ...

@@ -1,43 +1,14 @@
-<h1>Buildings</h1>
+<h1>Existing buildings</h1>
 <hr/>
-{{#each model as |building|}}
+{{#each model as |building index|}}
 
-  <div class="alert alert-info">
-    Name of building: {{building.name}}
-  </div>
-
-  <div class="row">
-    <div class="col-md-12">
-      <h4 class="text-center">
-        <span class="label label-primary">Check opportunity when owner occupying</span>
-      </h4>
-      <br/>
-
-      <table class="table table-striped table-hover">
-        <thead>
-          <tr>
-            <th>Multiplier of gross revenu</th>
-            <th>Price per appartment</th>
-            <th>Net value of rental</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="label label-danger">{{building.multiplierOfGrossRevenu}}</span></td>
-            <td><span class="label label-warning">{{building.pricePerFlat}}</span></td>
-            <td><span class="label label-danger">1223.34</span></td>
-          </tr>
-          <tr>
-            <td><span class="label label-success">1223.34</span></td>
-            <td><span class="label label-warning">1223.34</span></td>
-            <td><span class="label label-success">1223.34</span></td>
-          </tr>
-        </tbody>
-      </table>
-
+{{#if building.id}}
+  {{#link-to 'buildings.show'}}
+    <div class="alert alert-info">
+      {{index}} - {{building.name}}
     </div>
-  </div>
-
+  {{/link-to}}
+{{/if}}
 {{else}}
   <div class="bg-warning">
     Sorry, nobody is here.

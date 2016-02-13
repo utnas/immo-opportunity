@@ -9,10 +9,11 @@ export default Ember.Route.extend({
   actions: {
     create: function (model) {
       model.save().then(() => {
-          this.transitionTo('buildings');
+          console.log('Building saved with success');
         }, () => {
           console.log('Building save failed');
       });
+      this.transitionTo('buildings');
     },
     // other actions
   }
