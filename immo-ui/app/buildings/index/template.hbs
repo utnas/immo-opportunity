@@ -1,14 +1,13 @@
 <h1>Existing buildings</h1>
 <hr/>
 {{#each model as |building index|}}
-
-{{#if building.id}}
-  {{#link-to 'buildings.show'}}
-    <div class="alert alert-info">
-      {{index}} - {{building.name}}
-    </div>
-  {{/link-to}}
-{{/if}}
+  {{#if building.id}}
+    {{#link-to 'buildings.show' building.id}}
+      <div class="alert alert-info">
+        {{index}} - {{building.name}}
+      </div>
+    {{/link-to}}
+  {{/if}}
 {{else}}
   <div class="bg-warning">
     Sorry, nobody is here.
