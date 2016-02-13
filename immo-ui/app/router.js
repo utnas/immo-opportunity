@@ -10,6 +10,7 @@ Router.map(function() {
     this.route('new');
     //Other routes here ...
     this.route('show', {path: '/:building_id'});
+    this.route('edit');
   });
 });
 
