@@ -16,7 +16,7 @@ export default DS.Model.extend({
   rev:              DS.attr('string'),
 
   multiplierOfGrossRevenu: Ember.computed(function() {
-    return this.get('sellingPrice') / this.get('annualGrossRent');
+    return this.getMultiplierOfGrossRevenu()
   }),
 
   pricePerFlat: Ember.computed(function() {
@@ -37,6 +37,14 @@ export default DS.Model.extend({
 
   annualPerformanceOfBuilding: Ember.computed(function() {
     return this.getCurrentPerformance() + this.getAddedValueOfBuilding();
+  }),
+
+  annualPerformanceOfDownPayment: Ember.computed(function() {
+    return ;
+  }),
+
+  isMultiplierOfGrossRevenuLessTwelve: Ember.computed(function() {
+    return this.getMultiplierOfGrossRevenu() < 12;
   }),
 
   getCurrentPerformance: function(){
@@ -77,5 +85,10 @@ export default DS.Model.extend({
 
   vacancyRate: function(){
     return this.get('annualGrossRent') * 0.03;
+  },
+
+  getMultiplierOfGrossRevenu: function(){
+    return this.get('sellingPrice') / this.get('annualGrossRent');
   }
+
 });

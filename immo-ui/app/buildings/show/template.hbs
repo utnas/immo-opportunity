@@ -11,16 +11,18 @@
           <th>Price per appartment</th>
           <th>Net value of rental</th>
           <th>Operating expenses</th>
-          <th>Annual performance Of building</th>
+          <th>Annual performance of building</th>
+          <th>Annual performance of down payment</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><span class="label label-danger">{{model.multiplierOfGrossRevenu}}</span></td>
+          <td><span class="label {{if model.isMultiplierOfGrossRevenuLessTwelve 'label-success' 'label-danger'}}">{{model.multiplierOfGrossRevenu}}</span></td>
           <td><span class="label label-warning">{{model.pricePerFlat}}</span></td>
           <td><span class="label label-danger">{{model.netValuesOfRents}}</span></td>
           <td><span class="label label-danger">{{model.operatingExpenses}}</span></td>
           <td><span class="label label-danger">{{model.annualPerformanceOfBuilding}}%</span></td>
+          <td><span class="label label-danger">{{model.annualPerformanceOfDownPayment}}%</span></td>
         </tr>
       </tbody>
     </table>
