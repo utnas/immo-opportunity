@@ -32,7 +32,7 @@ export default DS.Model.extend({
   }),
 
   currentPerformance: Ember.computed(function() {
-     return (this.getNetValuesOfRents() - this.getOperatingExpenses()) / this.get('sellingPrice')/100;
+     return (((this.getNetValuesOfRents() - this.getOperatingExpenses())) / this.get('sellingPrice'))*100;
   }),
 
   getOperatingExpenses: function() {
@@ -48,7 +48,7 @@ export default DS.Model.extend({
   },
 
   managementFees: function(){
-    return this.get('annualGrossRent') * 0.05;
+    return (this.get('annualGrossRent')/ this.get('numberOfFlats'))* 0.05;
   },
 
   taxes: function(){
