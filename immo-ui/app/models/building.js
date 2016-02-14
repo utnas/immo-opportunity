@@ -32,15 +32,27 @@ export default DS.Model.extend({
   }),
 
   currentPerformance: Ember.computed(function() {
-     return (((this.getNetValuesOfRents() - this.getOperatingExpenses())) / this.get('sellingPrice'))*100;
+    return this.getCurrentPerformance();
   }),
+
+  annualPerformanceOfBuilding: Ember.computed(function() {
+    return this.getCurrentPerformance() + this.getAddedValueOfBuilding();
+  }),
+
+  getCurrentPerformance: function(){
+    return (((this.getNetValuesOfRents() - this.getOperatingExpenses()))/this.get('sellingPrice'))*100;
+  },
+
+  getAddedValueOfBuilding: function(){
+    return ((this.get('sellingPrice') * 0.02)/this.get('sellingPrice'))*100;
+  },
 
   getOperatingExpenses: function() {
     return this.taxes() + this.maintenanceFees() + this.get('unplanned') + this.get('insurance') + this.managementFees();
   },
 
   getNetValuesOfRents: function() {
-    return (this.get('annualGrossRent') + this.assessmentFactor()) - (this.provisionForBadDebt() + this.vacancyRate());
+    return ((this.get('annualGrossRent') / this.get('numberOfFlats'))+ this.assessmentFactor()) - (this.provisionForBadDebt() + this.vacancyRate());
   },
 
   maintenanceFees: function(){
