@@ -18,14 +18,13 @@
       <tbody>
         <tr>
           <td><span class="label {{if model.isMultiplierOfGrossRevenuLessTwelve 'label-success' 'label-danger'}}">{{model.multiplierOfGrossRevenu}}</span></td>
-          <td><span class="label label-warning">{{model.pricePerFlat}}</span></td>
-          <td><span class="label label-danger">{{model.netValuesOfRents}}</span></td>
-          <td><span class="label label-danger">{{model.operatingExpenses}}</span></td>
-          <td><span class="label label-danger">{{model.annualPerformanceOfBuilding}}%</span></td>
-          <td><span class="label label-danger">{{model.annualPerformanceOfDownPayment}}%</span></td>
+          <td><span class="label {{if model.isLessTo150Hundrud 'label-success' 'label-danger'}}">{{model.pricePerFlat}}</span></td>
+          <td><span class="label label-warning">{{model.netValuesOfRents}}</span></td>
+          <td><span class="label label-warning">{{model.operatingExpenses}}</span></td>
+          <td><span class="label label-warning">{{model.annualPerformanceOfBuilding}}%</span></td>
+          <td><span class="label label-warning">{{model.annualPerformanceOfDownPayment}}%</span></td>
         </tr>
       </tbody>
     </table>
-
   </div>
 </div>
